@@ -21,8 +21,8 @@ jobs:
         # Import LLVM GPG key properly
         wget -qO - https://apt.llvm.org/llvm-snapshot.gpg.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/llvm-snapshot.gpg > /dev/null
 
-        # Add LLVM repo for clang-format 21 (Debian bullseye repo works on Ubuntu 22.04)
-        echo "deb http://apt.llvm.org/bullseye/ llvm-toolchain-bullseye-21 main" | sudo tee /etc/apt/sources.list.d/llvm-21.list
+        # Add LLVM repo for clang-format 21 (Use Ubuntu Jammy repo for Ubuntu 22.04)
+        echo "deb http://apt.llvm.org/jammy/ llvm-toolchain-jammy-21 main" | sudo tee /etc/apt/sources.list.d/llvm-21.list
 
         # Update package lists
         sudo apt-get update --allow-releaseinfo-change
